@@ -44,72 +44,6 @@ p{
     background-color: #F3FFA1;
 }
 
-table{
-    background-color: #F3FFA1;
-    margin: 0 auto;
-    width: 40%;
-    border-spacing: 5px;
-    border: 4px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-th, td{
-    text-align: center;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-th{
-    font-size: 40px;
-    background-color: #FFA7A1;
-    color: aliceblue;
-}
-
-td{
-    font-size: 30px;
-    background-color: aliceblue;
-}
-
-.panel{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 50px;
-    row-gap: 25px;
-    padding: 0 50px;
-}
-
-.panel-item{
-    background-color: #F3FFA1;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.panel-item button{
-    background-color: #8E9CAA;
-    width: 100%;
-    height: 130px;
-    cursor: pointer;
-}
-
-.panel-item button:hover{
-    background-color: #a4afbb;
-}
-
-.panel-item button p{
-    background-color: unset;
-    text-align: center;
-    text-indent: 0;
-    padding: 0;
-    margin: 10px;
-    color: aliceblue;
-}
-
-.panel-item h3{
-    color: antiquewhite;
-    font-size: 30px;
-    margin: 10px 0;
-}
-
 .back{
     width: 70px;
     height: 70px;
@@ -138,29 +72,4 @@ td{
 .right-button h3{
     font-size: 20px;
     color: aliceblue;
-}
-
-.question{
-    width: 90%;
-    text-align: left;
-    padding: 0 10px;
-}
-
-.options{
-    display: flex;
-}
-
-.options button{
-    width: 15%;
-    height: 80px;
-    font-size: 30px;
-    margin: 0 auto;
-    background-color: #FFA7A1;
-    border: 0;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.options button:hover{
-    background-color: #fcb2ad;
 }
