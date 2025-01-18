@@ -139,3 +139,28 @@ td{
     font-size: 20px;
     color: aliceblue;
 }
+
+.question{
+    width: 90%;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.options{
+    display: flex;
+}
+
+.options button{
+    width: 15%;
+    height: 80px;
+    font-size: 30px;
+    margin: 0 auto;
+    background-color: #FFA7A1;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.options button:hover{
+    background-color: #fcb2ad;
+}
