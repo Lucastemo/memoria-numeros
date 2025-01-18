@@ -9,6 +9,14 @@ body{
     background-color: #A1CEFF;
 }
 
+nav{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 10px;
+}
+
 h1, h2{
     margin: 20px auto;
     border-bottom: 2px solid #F3FFA1;
@@ -74,4 +82,34 @@ p{
     color: antiquewhite;
     font-size: 30px;
     margin: 10px 0;
+}
+
+.back{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 70px;
+    background-color: #FFA7A1;
+    color: aliceblue;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.back:hover, .right-button:hover{
+    background-color: #fcb2ad;
+}
+
+.right-button{
+    margin: 10px 0 10px auto;
+    padding: 10px 20px;
+    background-color: #FFA7A1;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.right-button h3{
+    font-size: 20px;
+    color: aliceblue;
 }
