@@ -44,6 +44,32 @@ p{
     background-color: #F3FFA1;
 }
 
+table{
+    background-color: #F3FFA1;
+    margin: 0 auto;
+    width: 40%;
+    border-spacing: 5px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+th, td{
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+th{
+    font-size: 40px;
+    background-color: #FFA7A1;
+    color: aliceblue;
+}
+
+td{
+    font-size: 30px;
+    background-color: aliceblue;
+}
+
 .panel{
     display: grid;
     grid-template-columns: auto auto auto;
