@@ -14,13 +14,13 @@
     </nav>
     <h1>Major System</h1>
     <p>Aprenda o Major System para utilizá-lo como técnica para memorização através de um quiz sobre o respectivo som atribuído a cada número. Veja quantos acertos você é capaz de fazer!</p>
-    <h2 class="question">Placeholder</h2>
+    <h2 class="question" id="question">Placeholder</h2>
     <div class="options">
-        <button>Opção A</button>
-        <button>Opção B</button>
-        <button>Opção C</button>
-        <button>Opção D</button>
-        <button>Opção E</button>
+        <button id="optionA" onclick="gameLoop(0)">Opção A</button>
+        <button id="optionB" onclick="gameLoop(1)">Opção B</button>
+        <button id="optionC" onclick="gameLoop(2)">Opção C</button>
+        <button id="optionD" onclick="gameLoop(3)">Opção D</button>
+        <button id="optionE" onclick="gameLoop(4)">Opção E</button>
     </div>
     <table class="scoreboard">
         <tr>
@@ -28,9 +28,10 @@
             <th>Erros</th>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
+            <td id="score">0</td>
+            <td id="misses">0</td>
         </tr>
     </table>
+    <script src="../assets/js/majorsystem.js"></script>
 </body>
 </html>
