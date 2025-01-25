@@ -24,14 +24,10 @@
     background-color: #fcb2ad;
 }
 
-table{
-    width: 25%;
-    margin: 50px auto;
-    border-spacing: 0;
+th, td{
+    max-width: 50px;
 }
 
-th, td{
-    text-align: center;
+table{
     width: 50%;
-    font-size: 40px;
 }
