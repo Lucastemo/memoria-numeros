@@ -1,0 +1,114 @@
+.fullPanel{
+    display: flex;
+}
+
+.gamePanel{
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3FFA1;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.gamePanel input{
+    width: 75%;
+    margin: 50px auto 0;
+    font-size: 50px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+
+.gamePanel input:focus{
+    outline: none;
+}
+
+.button{
+    width: 50%;
+    height: 70px;
+    font-size: 50px;
+    margin: 30px auto 0;
+    background-color: #FFA7A1;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ready, .verify{
+    display: none;
+}
+
+.button:hover{
+    background-color: #fcb2ad;
+}
+
+.difficultyOptions{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 200px;
+    margin: 15px 0 0 auto;
+}
+
+.difficultyPanel{
+    background-color: #F3FFA1;
+    width: 450px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+.difficultyPanel h2{
+    width: 90%;
+    text-align: right;
+    padding: 10px 20px 0 0;
+    border-bottom-color: #FFA7A1;
+}
+
+.container{
+    position: relative;
+    user-select: none;
+    padding-left: 50px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.container input{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.container .checkbox{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    background-color: #FFA7A1;
+    border-radius: 50%;
+}
+
+.container:hover .checkbox{
+    background-color: #fcb2ad;
+}
+
+.container .checkbox::after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkbox::after{
+    display: block;
+    height: 50%;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    background-color: aliceblue;
+    border-radius: 50%;
+}

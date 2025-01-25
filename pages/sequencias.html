@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequências</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/sequencias.css">
+</head>
+<body>
+    <nav>
+        <button class="back" onclick="location.assign('../index.html')"><</button>
+    </nav>
+    <h1>Sequências</h1>
+    <p>Pratique a utilização do Major System para a memorização de sequências de 5 a 15 números. Tente transformar os números em sons e juntar esses sons para formar palavras, para memorizar com mais facilidade. Após isso, transforme as palavras em números novamente.</p>
+    <div class="fullPanel">
+        <div class="gamePanel">
+            <input type="text" id="textBox" enabled="false" disabled>
+            <button class="play button">Começar</button>
+            <button class="ready button">Pronto</button>
+            <button class="verify button">Verificar</button>
+        </div>
+        <div class="difficultyPanel">
+            <h2>Escolha a dificuldade</h2>
+            <div class="difficultyOptions">
+                <label class="container">Fácil
+                    <input checked="true" type="radio" name="difficulty" value="easy">
+                    <span class="checkbox"></span>
+                </label>
+                <label class="container">Médio
+                    <input type="radio" name="difficulty" value="medium">
+                    <span class="checkbox"></span>
+                </label>
+                <label class="container">Difícil
+                    <input type="radio" name="difficulty" value="hard">
+                    <span class="checkbox"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <h2>Tempo: 0 segundos</h2>
+    <table class="scoreboard">
+        <tr>
+            <th>Acertos</th>
+            <th>Erros</th>
+            <th>Tempo Médio de Visualização da Sequência Numérica</th>
+        </tr>
+        <tr>
+            <td id="score">0</td>
+            <td id="misses">0</td>
+            <td id="averageTime">0</td>
+        </tr>
+    </table>
+</body>
+</html>
