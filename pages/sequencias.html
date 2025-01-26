@@ -15,7 +15,7 @@
     <p>Pratique a utilização do Major System para a memorização de sequências de 5 a 15 números. Tente transformar os números em sons e juntar esses sons para formar palavras, para memorizar com mais facilidade. Após isso, transforme as palavras em números novamente.</p>
     <div class="fullPanel">
         <div class="gamePanel">
-            <input type="text" id="textBox" disabled readonly>
+            <input type="text" id="textBox" maxlength="5" oninput="checkCharacterAmount()" disabled readonly>
             <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
             <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
             <button class="verify button" id="verifyButton" onclick="gameLoop(textBox.value)">Verificar</button>

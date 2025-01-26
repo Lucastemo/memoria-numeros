@@ -19,6 +19,14 @@ let visualizationTimeArray = [];
 let generatedRandomNumber = "";
 let gameTimer;
 
+function checkCharacterAmount(){
+    if(textBox.value.length == textBox.maxLength){
+        verifyButton.disabled = false;
+    }else{
+        verifyButton.disabled = true;
+    }
+}
+
 function getDifficulty(){
     for(i = 0; i < difficultyRadioBoxes.length; i++){
         if(difficultyRadioBoxes[i].checked){
@@ -103,6 +111,7 @@ function gameLoop(guess = undefined){
             numberAmount = 15;
             break;
     }
+    textBox.maxLength = numberAmount;
     generatedRandomNumber = generateRandomNumber(numberAmount);
     textBox.value = generatedRandomNumber;
     const startingTime = new Date();
@@ -115,6 +124,7 @@ function gameLoop(guess = undefined){
 function ready(){
     readyButton.style.display = "none";
     verifyButton.style.display = "block";
+    verifyButton.disabled = true;
     textBox.value = "";
     clearInterval(gameTimer);
     visualizationTimeArray.push(timePassed);
