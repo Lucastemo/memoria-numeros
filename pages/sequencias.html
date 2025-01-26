@@ -15,24 +15,24 @@
     <p>Pratique a utilização do Major System para a memorização de sequências de 5 a 15 números. Tente transformar os números em sons e juntar esses sons para formar palavras, para memorizar com mais facilidade. Após isso, transforme as palavras em números novamente.</p>
     <div class="fullPanel">
         <div class="gamePanel">
-            <input type="text" id="textBox" enabled="false" disabled>
-            <button class="play button">Começar</button>
-            <button class="ready button">Pronto</button>
-            <button class="verify button">Verificar</button>
+            <input type="text" id="textBox" disabled readonly>
+            <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
+            <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
+            <button class="verify button" id="verifyButton" onclick="gameLoop(textBox.value)">Verificar</button>
         </div>
         <div class="difficultyPanel">
             <h2>Escolha a dificuldade</h2>
             <div class="difficultyOptions">
                 <label class="container">Fácil
-                    <input checked="true" type="radio" name="difficulty" value="easy">
+                    <input checked="true" type="radio" name="difficulty" value="easy" onchange="getDifficulty()">
                     <span class="checkbox"></span>
                 </label>
                 <label class="container">Médio
-                    <input type="radio" name="difficulty" value="medium">
+                    <input type="radio" name="difficulty" value="medium" onchange="getDifficulty()">
                     <span class="checkbox"></span>
                 </label>
                 <label class="container">Difícil
-                    <input type="radio" name="difficulty" value="hard">
+                    <input type="radio" name="difficulty" value="hard" onchange="getDifficulty()">
                     <span class="checkbox"></span>
                 </label>
             </div>
@@ -48,8 +48,9 @@
         <tr>
             <td id="score">0</td>
             <td id="misses">0</td>
-            <td id="averageTime">0</td>
+            <td id="averageTime">0.00 segundo(s)</td>
         </tr>
     </table>
+    <script src="../assets/js/sequencias.js"></script>
 </body>
 </html>
