@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datas</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/datas.css">
+</head>
+<body>
+    <nav>
+        <button class="back" onclick="location.assign('../index.html')"><</button>
+    </nav>
+    <h1>Datas</h1>
+    <p>Pratique a utilização do Major System para a memorização de datas. Dica: tente juntar os respectivos sons dos números e criar uma palavra para cada parte da data (Por exemplo: uma palavra para os dois dígitos do dia, uma outra palavra para os dois dígitos do mês e mais uma palavra para os quatro dígitos do ano)</p>
+    <div class="gamePanel">
+        <input type="text" id="textBox" maxlength="5" oninput="checkCharacterAmount()" disabled readonly>
+        <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
+        <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
+        <button class="verify button" id="verifyButton" onclick="gameLoop(textBox.value)">Verificar</button>
+    </div>
+    <h2 class="time" id="time">Tempo: 0 segundos</h2>
+    <table class="scoreboard">
+        <tr>
+            <th>Acertos</th>
+            <th>Erros</th>
+            <th class="longText">Tempo Médio de Visualização da Data</th>
+        </tr>
+        <tr>
+            <td id="score">0</td>
+            <td id="misses">0</td>
+            <td id="averageTime">0.00 segundo(s)</td>
+        </tr>
+    </table>
+</body>
+</html>
