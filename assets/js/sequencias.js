@@ -55,6 +55,31 @@ function resetStatus(){
     updateStatusOnHtmlTable();
 }
 
+function enableInput(enable = true){
+    if(enable){
+        textBox.readOnly = false;
+        textBox.style.userSelect = "initial";
+        textBox.style.pointerEvents = "initial";
+    }else{
+        textBox.readOnly = true;
+        textBox.style.userSelect = "none";
+        textBox.style.pointerEvents = "none";
+    }
+}
+
+function startTimer(){
+    timeH2.innerHTML = "Tempo: 0 segundos";
+    timeH2.style.color = "green";
+    gameTimer = setInterval(timer, 1000, new Date());
+}
+
+function endTimer(){
+    clearInterval(gameTimer);
+    visualizationTimeArray.push(timePassed);
+    timePassed = 0;
+    timeH2.style.color = "red";
+}
+
 function timer(startingTime){
     const currentTime = new Date();
     timePassed = Math.floor((currentTime - startingTime) / 1000);
@@ -85,9 +110,6 @@ function startConfig(){
 }
 
 function gameLoop(guess = undefined){
-    textBox.readOnly = true;
-    textBox.style.userSelect = "none";
-    textBox.style.pointerEvents = "none";
     verifyButton.style.display = "none";
     readyButton.style.display = "block";
     if(guess != undefined){
@@ -113,24 +135,18 @@ function gameLoop(guess = undefined){
     }
     textBox.maxLength = numberAmount;
     generatedRandomNumber = generateRandomNumber(numberAmount);
+    enableInput(false);
     textBox.value = generatedRandomNumber;
-    const startingTime = new Date();
-    timeH2.innerHTML = "Tempo: 0 segundos";
-    gameTimer = setInterval(timer, 1000, startingTime);
-    timePassed = 0;
-    timeH2.style.color = "green";
+    startTimer();
 }
 
 function ready(){
     readyButton.style.display = "none";
     verifyButton.style.display = "block";
     verifyButton.disabled = true;
+    
+    endTimer();
+    enableInput(true);
     textBox.value = "";
-    clearInterval(gameTimer);
-    visualizationTimeArray.push(timePassed);
-    timeH2.style.color = "red";
-    textBox.readOnly = false;
-    textBox.style.userSelect = "initial";
-    textBox.style.pointerEvents = "initial";
     textBox.focus();
 }

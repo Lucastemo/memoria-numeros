@@ -22,6 +22,31 @@ function updateStatusOnHtmlTable(){
     averageTimeHtml.innerHTML = `${averageTime.toFixed(2)} segundo(s)`;
 }
 
+function enableInput(enable = true){
+    if(enable){
+        dateInput.readOnly = false;
+        dateInput.style.userSelect = "initial";
+        dateInput.style.pointerEvents = "initial";
+    }else{
+        dateInput.readOnly = true;
+        dateInput.style.userSelect = "none";
+        dateInput.style.pointerEvents = "none";
+    }
+}
+
+function startTimer(){
+    timeH2.innerHTML = "Tempo: 0 segundos";
+    timeH2.style.color = "green";
+    gameTimer = setInterval(timer, 1000, new Date());
+}
+
+function endTimer(){
+    clearInterval(gameTimer);
+    visualizationTimeArray.push(timePassed);
+    timePassed = 0;
+    timeH2.style.color = "red";
+}
+
 function timer(startingTime){
     const currentTime = new Date();
     timePassed = Math.floor((currentTime - startingTime) / 1000);
@@ -58,30 +83,21 @@ function gameLoop(guess = undefined){
         averageTime = calculateAverageTime();
         updateStatusOnHtmlTable();
     }
-    dateInput.readOnly = true;
+
     verifyButton.style.display = "none";
-    dateInput.style.userSelect = "none";
-    dateInput.style.pointerEvents = "none";
     readyButton.style.display = "block";
     
     generatedRandomDateString = generateRandomDate(new Date("1900-01-01T00:00:00Z"), new Date());
+    enableInput(false);
     dateInput.value = generatedRandomDateString;
-    const startingTime = new Date();
-    timeH2.innerHTML = "Tempo: 0 segundos";
-    timeH2.style.color = "green";
-    gameTimer = setInterval(timer, 1000, startingTime);
-    timePassed = 0;
+    startTimer();
 }
 
 function ready(){
-    dateInput.readOnly = false;
-    readyButton.style.display = "none";
-    dateInput.style.userSelect = "initial";
-    dateInput.style.pointerEvents = "initial";
-    verifyButton.style.display = "block";
+    enableInput(true);
     dateInput.value = "";
     dateInput.focus();
-    clearInterval(gameTimer);
-    visualizationTimeArray.push(timePassed);
-    timeH2.style.color = "red";
+    readyButton.style.display = "none";
+    verifyButton.style.display = "block";
+    endTimer();
 }
