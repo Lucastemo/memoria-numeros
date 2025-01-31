@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefone</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/telefone.css">
+</head>
+<body>
+    <nav>
+        <button class="back" onclick="location.assign('../index.html')"><</button>
+    </nav>
+    <h1>Telefone</h1>
+    <p>Pratique a utilização do Major System para a memorização de números de telefone.</p>
+    <div class="gamePanel">
+        <input type="tel" id="telInput" disabled readonly>
+        <button class="play button" id="playButton">Começar</button>
+        <button class="ready button" id="readyButton">Pronto</button>
+        <button class="verify button" id="verifyButton">Verificar</button>
+    </div>
+    <h2 class="time" id="time">Tempo: 0 segundos</h2>
+    <table class="scoreboard">
+        <tr>
+            <th>Acertos</th>
+            <th>Erros</th>
+            <th class="longText">Tempo Médio de Visualização do Número de Telefone</th>
+        </tr>
+        <tr>
+            <td id="score">0</td>
+            <td id="misses">0</td>
+            <td id="averageTime">0.00 segundo(s)</td>
+        </tr>
+    </table>
+    <div class="lowerText">
+        <h3>AVISO</h3>
+        <p>Os números de telefone gerados por este sistema são criados aleatoriamente e não possuem associação intencional com números reais. No entanto, podem coincidir com números existentes. Não utilize os números gerados para chamadas, mensagens ou qualquer outro tipo de comunicação real.</p>
+    </div>
+</body>
+</html>

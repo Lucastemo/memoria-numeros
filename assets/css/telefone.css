@@ -1,0 +1,35 @@
+.gamePanel{
+    height: 230px;
+}
+
+.time{
+    width: calc(70% - 20px);
+}
+
+table{
+    width: 70%;
+}
+
+.lowerText{
+    background-color: #F3FFA1;
+    margin: 0 80px;
+    padding: 10px 0;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.lowerText h3{
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 10px;
+    padding: 0;
+    color: crimson;
+}
+
+.lowerText p{
+    text-align: center;
+    background-color: unset;
+    margin: 0;
+    padding: 0;
+}
