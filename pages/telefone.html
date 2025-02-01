@@ -15,9 +15,9 @@
     <p>Pratique a utilização do Major System para a memorização de números de telefone.</p>
     <div class="gamePanel">
         <input type="tel" id="telInput" disabled readonly>
-        <button class="play button" id="playButton">Começar</button>
-        <button class="ready button" id="readyButton">Pronto</button>
-        <button class="verify button" id="verifyButton">Verificar</button>
+        <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
+        <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
+        <button class="verify button" id="verifyButton" onclick="gameLoop(telInput.value)">Verificar</button>
     </div>
     <h2 class="time" id="time">Tempo: 0 segundos</h2>
     <table class="scoreboard">
