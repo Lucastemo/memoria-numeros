@@ -3,6 +3,8 @@ const timeH2 = document.getElementById("time");
 const scoreHtml = document.getElementById("score");
 const missesHtml = document.getElementById("misses");
 const averageTimeHtml = document.getElementById("averageTime");
+const customDDDRadios = document.getElementsByName("radioCustomDDD");
+const customDDDInput = document.getElementById("customDDD");
 
 const playButton = document.getElementById("playButton");
 const readyButton = document.getElementById("readyButton");
@@ -15,12 +17,28 @@ let timePassed = 0;
 let visualizationTimeArray = [];
 let generatedRandomPhoneNumber;
 let gameTimer;
+let customDDD = 0;
 
 telInput.addEventListener("input", (event) =>{
     let value = event.target.value.toString();
     value = value.replace(/\D/g, "");
     value = formatValue(value);
     event.target.value = value;
+});
+
+customDDDInput.addEventListener("blur", (event) =>{
+    value = event.target.value;
+    if(value < 11){
+        value = 11;
+    }else if(value > 99){
+        value = 99;
+    }
+    event.target.value = value;
+    customDDD = value;
+    resetStatus();
+    if(generatedRandomPhoneNumber){
+        gameLoop();
+    }
 });
 
 function formatValue(value){
@@ -38,6 +56,40 @@ function updateStatusOnHtmlTable(){
     scoreHtml.innerHTML = score;
     missesHtml.innerHTML = misses;
     averageTimeHtml.innerHTML = `${averageTime.toFixed(2)} segundo(s)`;
+}
+
+function resetStatus(){
+    score = 0;
+    misses = 0;
+    averageTime = 0;
+    visualizationTimeArray = [];
+    clearInterval(gameTimer);
+    timePassed = 0;
+    updateStatusOnHtmlTable();
+}
+
+function customDDDActivated(){
+    for(i = 0; i < customDDDRadios.length; i++){
+        if(customDDDRadios[i].checked){
+            return customDDDRadios[i].value;
+        }
+    }
+}
+
+function customDDDRadioChange(){
+    if(customDDDActivated() == "ON"){
+        customDDDInput.disabled = false;
+        customDDDInput.value = 11;
+        customDDD = customDDDInput.value;
+    }else{
+        customDDDInput.disabled = true;
+        customDDDInput.value = "";
+        customDDD = 0;
+    }
+    if(generatedRandomPhoneNumber){
+        resetStatus();
+        gameLoop()
+    }
 }
 
 function enableInput(enable = true){
@@ -95,7 +147,7 @@ function randomIntegerBetween(min = 1, max = 5){
 }
 
 function generateNewRandomPhoneNumber(){
-    let randomPhoneNumber = randomIntegerBetween(11, 99).toString();
+    let randomPhoneNumber = customDDD ? customDDD.toString() : randomIntegerBetween(11, 99).toString();
     for(i = 0; i < 9; i++){
         randomPhoneNumber += Math.floor(Math.random() * 10).toString();
     }
