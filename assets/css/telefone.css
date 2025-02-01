@@ -2,19 +2,13 @@
     height: 230px;
 }
 
-.customDDDPanel{
-    width: 450px;
-    margin: 0 auto;
+.sidePanel{
     display: flex;
     flex-direction: column;
-    background-color: #F3FFA1;
-    border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-.customDDDPanel h2{
+.sidePanel h2{
     width: 90%;
-    border-bottom-color: #FFA7A1;
 }
 
 #customDDD{

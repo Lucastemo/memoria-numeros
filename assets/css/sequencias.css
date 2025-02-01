@@ -6,20 +6,14 @@
     margin: 15px 0 0 auto;
 }
 
-.difficultyPanel{
-    background-color: #F3FFA1;
-    width: 450px;
+.sidePanel{
     padding-bottom: 10px;
-    border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
 }
 
-.difficultyPanel h2{
+.sidePanel h2{
     width: 90%;
     text-align: right;
     padding: 10px 20px 0 0;
-    border-bottom-color: #FFA7A1;
 }
 
 .time{
