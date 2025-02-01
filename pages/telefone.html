@@ -13,11 +13,27 @@
     </nav>
     <h1>Telefone</h1>
     <p>Pratique a utilização do Major System para a memorização de números de telefone.</p>
-    <div class="gamePanel">
-        <input type="tel" id="telInput" disabled readonly>
-        <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
-        <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
-        <button class="verify button" id="verifyButton" onclick="gameLoop(telInput.value)">Verificar</button>
+    <div class="fullPanel">
+        <div class="gamePanel">
+            <input type="tel" id="telInput" disabled readonly>
+            <button class="play button" id="playButton" onclick="startConfig(); gameLoop()">Começar</button>
+            <button class="ready button" id="readyButton" onclick="ready()">Pronto</button>
+            <button class="verify button" id="verifyButton" onclick="gameLoop(telInput.value)">Verificar</button>
+        </div>
+        <div class="customDDDPanel">
+            <h2>DDD Personalizado</h2>
+            <div class="radioContainers">
+                <label class="container">Ligado
+                    <input type="radio" name="radioCustomDDD" value="ON">
+                    <span class="checkbox"></span>
+                </label>
+                <label class="container">Desligado
+                    <input type="radio" name="radioCustomDDD" value="OFF" checked>
+                    <span class="checkbox"></span>
+                </label>
+            </div>
+            <input type="number" id="customDDD" min="11" max="99" disabled>
+        </div>
     </div>
     <h2 class="time" id="time">Tempo: 0 segundos</h2>
     <table class="scoreboard">

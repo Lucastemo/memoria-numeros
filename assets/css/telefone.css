@@ -2,6 +2,41 @@
     height: 230px;
 }
 
+.customDDDPanel{
+    width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3FFA1;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.customDDDPanel h2{
+    width: 90%;
+    border-bottom-color: #FFA7A1;
+}
+
+#customDDD{
+    width: 75%;
+    margin: 10px auto;
+    font-size: 50px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+
+#customDDD:focus{
+    outline: none;
+}
+
+.radioContainers{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 .time{
     width: calc(70% - 20px);
 }
@@ -32,4 +67,15 @@ table{
     background-color: unset;
     margin: 0;
     padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

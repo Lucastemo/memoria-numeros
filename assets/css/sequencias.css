@@ -1,7 +1,3 @@
-.fullPanel{
-    display: flex;
-}
-
 .difficultyOptions{
     display: flex;
     flex-direction: column;
@@ -24,51 +20,6 @@
     text-align: right;
     padding: 10px 20px 0 0;
     border-bottom-color: #FFA7A1;
-}
-
-.container{
-    position: relative;
-    user-select: none;
-    padding-left: 50px;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.container input{
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
-}
-
-.container .checkbox{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 40px;
-    width: 40px;
-    background-color: #FFA7A1;
-    border-radius: 50%;
-}
-
-.container:hover .checkbox{
-    background-color: #fcb2ad;
-}
-
-.container .checkbox::after{
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.container input:checked ~ .checkbox::after{
-    display: block;
-    height: 50%;
-    width: 50%;
-    left: 25%;
-    top: 25%;
-    background-color: aliceblue;
-    border-radius: 50%;
 }
 
 .time{
